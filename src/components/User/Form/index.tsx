@@ -47,9 +47,10 @@ type InputProps = {
 
 const Input: React.FC<InputProps> = ({ label, value, onChange }) => {
   return (
-    <label className="flex items-center gap-4 w-full">
+    <label className="flex items-center gap-4 w-full" htmlFor={label.toLowerCase()}>
       <div className="basis-1/4">{label}:</div>
       <input
+        id={label.toLowerCase()}
         className="text-neutral-700 border border-neutral-300 rounded-md px-2 py-1 flex-grow"
         type="text"
         value={value}
